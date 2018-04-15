@@ -1,0 +1,4 @@
+spring:
+    resources:
+        static-locations:
+            - file:build,classpath:/public,classpath:/static
