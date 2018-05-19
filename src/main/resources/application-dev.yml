@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: dev
+  datasource: 
+    url:  jdbc:postgresql://ec2-54-75-244-248.eu-west-1.compute.amazonaws.com/dfnqieqvb1iq2l?sslmode=require
+    username: mdisgvbixwxplr
+    password: c00bb346044aa1e77545f94204b5c240e27193a6dd6c899bdba52b26d1975557 
+  jpa: 
+    show-sql: true
+    properties:
+        hibernate.id.new_generator_mappings: false
+        hibernate.cache.use_second_level_cache: true
+        hibernate.cache.use_query_cache: false
+        hibernate.generate_statistics: false 
+    
+  

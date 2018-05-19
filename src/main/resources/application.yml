@@ -1,4 +1,65 @@
 spring:
-    resources:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driverClassName: org.postgresql.Driver
+    url:  ${JDBC_DATABASE_URL}
+    username: ${JDBC_DATABASE_USERNAME}
+    password: ${JDBC_DATABASE_PASSWORD} 
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: POSTGRESQL
+    show-sql: false
+    properties:
+        hibernate.id.new_generator_mappings: false
+        hibernate.cache.use_second_level_cache: true
+        hibernate.cache.use_query_cache: false
+        hibernate.generate_statistics: false 
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy 
+    open-in-view: false
+  resources:
         static-locations:
             - file:build,classpath:/public,classpath:/static
+  profiles:
+    active: #spring.profiles.active#
+server:
+  session:
+    cookie:
+      http-only: true
+liquibase:
+  url: ${spring.datasource.url}
+  user: ${spring.datasource.username}
+  password: ${spring.datasource.password}
+  
+jhipster:
+    async:
+        core-pool-size: 2
+        max-pool-size: 50
+        queue-capacity: 10000
+    # By default CORS is disabled. Uncomment to enable.
+    #cors:
+        #allowed-origins: "*"
+        #allowed-methods: "*"
+        #allowed-headers: "*"
+        #exposed-headers: "Authorization,Link,X-Total-Count"
+        #allow-credentials: true
+        #max-age: 1800
+    mail:
+        from: hellorj@localhost
+    swagger:
+        default-include-pattern: /api/.*
+        title: hellorj API
+        description: hellorj API documentation
+        version: 0.0.1
+        terms-of-service-url:
+        contact-name:
+        contact-url:
+        contact-email:
+        license:
+        license-url:
+    ribbon:
+        display-on-active-profiles: dev
+      
