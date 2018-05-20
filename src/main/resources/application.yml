@@ -24,7 +24,7 @@ spring:
         static-locations:
             - file:build,classpath:/public,classpath:/static
   profiles:
-    active: #spring.profiles.active#
+    active: dev
 server:
   session:
     cookie:
