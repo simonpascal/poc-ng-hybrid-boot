@@ -1,5 +1,7 @@
 # Heapp
 
+https://sonarcloud.io/api/project_badges/measure?project=org.simon.pascal%3Apoc-ng-hybrid&metric=alert_status
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
 ## Development server
