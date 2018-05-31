@@ -1,4 +1,4 @@
-package org.simon.pascal.pochybrid;
+package org.simon.pascal;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

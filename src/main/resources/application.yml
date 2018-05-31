@@ -24,15 +24,19 @@ spring:
         static-locations:
             - file:build,classpath:/public,classpath:/static
   profiles:
-    active: dev
+    active: prod
+  liquibase:
+    url: ${spring.datasource.url}
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+    change-log: classpath:config/liquibase/master.xml 
 server:
-  session:
-    cookie:
-      http-only: true
-liquibase:
-  url: ${spring.datasource.url}
-  user: ${spring.datasource.username}
-  password: ${spring.datasource.password}
+  servlet:
+    session:
+      cookie:
+        http-only: true
+
+  
   
 jhipster:
     async:
